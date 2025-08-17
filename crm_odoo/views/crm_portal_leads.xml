@@ -1,0 +1,57 @@
+<odoo>
+    <!-- القائمة الجانبية في البورتال -->
+    <template id="portal_my_home_menu_leads" inherit_id="portal.portal_my_home">
+        <xpath expr="//div[contains(@id, 'o_my_home_menu')]" position="inside">
+            <div class="col-12 col-md-4">
+                <a t-attf-href="/my/leads" class="btn btn-primary w-100 mb-3">
+                    <i class="fa fa-lightbulb-o"/>
+                    My CRM Leads
+                </a>
+            </div>
+        </xpath>
+    </template>
+
+
+    <!-- صفحة عرض الفرص -->
+    <template id="portal_my_leads" name="My CRM Leads">
+        <t t-call="portal.portal_layout">
+            <t t-set="title">My CRM Leads</t>
+            <div class="container">
+                <h2 class="my-3">My CRM Leads</h2>
+                <t t-if="leads">
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Stage</th>
+                                <th>Expected Revenue</th>
+                                <th>Deadline</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <t t-foreach="leads" t-as="lead">
+                                <tr>
+                                    <td>
+                                        <t t-esc="lead.name"/>
+                                    </td>
+                                    <td>
+                                        <t t-esc="lead.stage_id.name"/>
+                                    </td>
+                                    <td>
+                                        <t t-esc="lead.expected_revenue"/>
+                                    </td>
+                                    <td>
+                                        <t t-esc="lead.date_deadline"/>
+                                    </td>
+                                </tr>
+                            </t>
+                        </tbody>
+                    </table>
+                </t>
+                <t t-if="not leads">
+                    <p>No leads found.</p>
+                </t>
+            </div>
+        </t>
+    </template>
+</odoo>

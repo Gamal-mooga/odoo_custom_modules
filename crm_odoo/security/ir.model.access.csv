@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_task_user,task.user,model_task,,1,1,1,1
+access_task_timesheet_user,task_timesheet.user,model_task_timesheet,,1,1,1,1
+access_wizard_user,wizard.user,model_wizard,,1,1,1,1
+access_api_access_token,api_access_token.user,model_api_access_token,,1,1,1,1

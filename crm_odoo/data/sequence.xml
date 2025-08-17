@@ -1,0 +1,11 @@
+<odoo>
+    <data>
+        <record id="property_sequence" model="ir.sequence">
+            <field name="name">Taskseq.</field>
+            <field name="code">task_seq</field>
+            <field name="prefix">TS</field>
+            <field name="padding">10</field>
+
+        </record>
+    </data>
+</odoo>

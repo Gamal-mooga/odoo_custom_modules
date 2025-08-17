@@ -1,0 +1,450 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* task_one
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0-20250218\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-03-10 15:42+0000\n"
+"PO-Revision-Date: 2025-03-10 22:45+0200\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: ar\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=6; plural=(n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5);\n"
+"X-Generator: Poedit 3.5\n"
+
+#. module: task_one
+#: model:ir.model.fields,field_description:task_one.field_task__message_needaction
+msgid "Action Needed"
+msgstr "الإجراء مطلوب"
+
+#. module: task_one
+#: model:ir.model.fields,field_description:task_one.field_task__active
+msgid "Active"
+msgstr "نشط"
+
+#. module: task_one
+#: model:ir.model.fields,field_description:task_one.field_task__activity_ids
+msgid "Activities"
+msgstr "الأنشطة"
+
+#. module: task_one
+#: model:ir.model.fields,field_description:task_one.field_task__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr "ترتيب استثناء النشاط"
+
+#. module: task_one
+#: model:ir.model.fields,field_description:task_one.field_task__activity_state
+msgid "Activity State"
+msgstr "حالة النشاط"
+
+#. module: task_one
+#: model:ir.model.fields,field_description:task_one.field_task__activity_type_icon
+msgid "Activity Type Icon"
+msgstr "أيقونة نوع النشاط"
+
+#. module: task_one
+#: model:ir.ui.menu,name:task_one.tasks_menu_item
+msgid "All Tasks"
+msgstr "كل المهام"
+
+#. module: task_one
+#: model:ir.model.fields,field_description:task_one.field_task__assign_to
+#: model_terms:ir.ui.view,arch_db:task_one.task_view_search
+msgid "Assign To"
+msgstr "إسناد الى"
+
+#. module: task_one
+#: model_terms:ir.ui.view,arch_db:task_one.task_report_template
+msgid "Assign To:"
+msgstr "تعيين إلى:"
+
+#. module: task_one
+#: model:ir.model.fields,field_description:task_one.field_task__message_attachment_count
+msgid "Attachment Count"
+msgstr "عدد المرفقات"
+
+#. module: task_one
+#: model_terms:ir.ui.view,arch_db:task_one.task_change_state_wizard_view_form
+msgid "Cancel"
+msgstr "إلغاء"
+
+#. module: task_one
+#: model:ir.actions.server,name:task_one.checking_late_ir_actions_server
+#: model:ir.cron,cron_name:task_one.checking_late
+msgid "Check Task Late"
+msgstr "التحقق من المهمة في وقت متأخر"
+
+#. module: task_one
+#: model:ir.actions.server,name:task_one.task_close_server_action
+#: model:ir.model.fields.selection,name:task_one.selection__wizard__status__close
+msgid "Close"
+msgstr "إغلاق"
+
+#. module: task_one
+#: model:ir.model.fields.selection,name:task_one.selection__task__status__closed
+msgid "Closed"
+msgstr "مغلق"
+
+#. module: task_one
+#: model:ir.model.fields.selection,name:task_one.selection__task__status__completed
+#: model:ir.model.fields.selection,name:task_one.selection__wizard__status__completed
+msgid "Completed"
+msgstr "مكتمل "
+
+#. module: task_one
+#: model_terms:ir.ui.view,arch_db:task_one.task_view_search
+msgid "Completed Status"
+msgstr "الحالة المكتملة"
+
+#. module: task_one
+#: model_terms:ir.ui.view,arch_db:task_one.task_change_state_wizard_view_form
+msgid "Confirm"
+msgstr "مؤكد"
+
+#. module: task_one
+#: model:ir.model.fields,field_description:task_one.field_task__create_uid
+#: model:ir.model.fields,field_description:task_one.field_task_timesheet__create_uid
+#: model:ir.model.fields,field_description:task_one.field_wizard__create_uid
+msgid "Created by"
+msgstr "تم إنشاؤها بواسطة"
+
+#. module: task_one
+#: model:ir.model.fields,field_description:task_one.field_task__create_date
+#: model:ir.model.fields,field_description:task_one.field_task_timesheet__create_date
+#: model:ir.model.fields,field_description:task_one.field_wizard__create_date
+msgid "Created on"
+msgstr "تم إنشاؤها بتاريخ"
+
+#. module: task_one
+#: model:ir.model.fields,field_description:task_one.field_task_timesheet__date
+#: model_terms:ir.ui.view,arch_db:task_one.task_report_template
+msgid "Date"
+msgstr "تاريخ"
+
+#. module: task_one
+#: model:ir.model.fields,field_description:task_one.field_task__description
+#: model:ir.model.fields,field_description:task_one.field_task_timesheet__description
+#: model_terms:ir.ui.view,arch_db:task_one.task_report_template
+msgid "Description"
+msgstr "وصف"
+
+#. module: task_one
+#: model_terms:ir.ui.view,arch_db:task_one.task_report_template
+msgid "Description:"
+msgstr "وصف"
+
+#. module: task_one
+#: model:ir.model.fields,field_description:task_one.field_task__display_name
+#: model:ir.model.fields,field_description:task_one.field_task_timesheet__display_name
+#: model:ir.model.fields,field_description:task_one.field_wizard__display_name
+msgid "Display Name"
+msgstr "اسم العرض"
+
+#. module: task_one
+#: model:ir.model.fields,field_description:task_one.field_task__due_date
+#: model_terms:ir.ui.view,arch_db:task_one.task_view_search
+msgid "Due Date"
+msgstr "تاريخ الاستحقاق"
+
+#. module: task_one
+#: model_terms:ir.ui.view,arch_db:task_one.task_report_template
+msgid "Due Date:"
+msgstr "تاريخ الاستحقاق"
+
+#. module: task_one
+#: model:ir.model.fields,field_description:task_one.field_task__estimated_time
+msgid "Estimated Time (hours)"
+msgstr "الوقت المقدر (بالساعات)"
+
+#. module: task_one
+#: model_terms:ir.ui.view,arch_db:task_one.task_report_template
+msgid "Estimated Time:"
+msgstr "الوقت المقدر "
+
+#. module: task_one
+#: model:ir.model.fields,field_description:task_one.field_task__message_follower_ids
+msgid "Followers"
+msgstr "متابعين"
+
+#. module: task_one
+#: model:ir.model.fields,field_description:task_one.field_task__message_partner_ids
+msgid "Followers (Partners)"
+msgstr "متابعين(شركاء)"
+
+#. module: task_one
+#: model:ir.model.fields,help:task_one.field_task__activity_type_icon
+msgid "Font awesome icon e.g. fa-tasks"
+msgstr "أيقونة الخط رائعة مثل fa-tasks"
+
+#. module: task_one
+#: model:ir.model.fields,field_description:task_one.field_task__has_message
+msgid "Has Message"
+msgstr "لديه رسالة"
+
+#. module: task_one
+#: model:ir.model.fields,field_description:task_one.field_task__id
+#: model:ir.model.fields,field_description:task_one.field_task_timesheet__id
+#: model:ir.model.fields,field_description:task_one.field_wizard__id
+msgid "ID"
+msgstr "بطاقة تعريف"
+
+#. module: task_one
+#: model:ir.model.fields,field_description:task_one.field_task__activity_exception_icon
+msgid "Icon"
+msgstr "ايقونة"
+
+#. module: task_one
+#: model:ir.model.fields,help:task_one.field_task__activity_exception_icon
+msgid "Icon to indicate an exception activity."
+msgstr "أيقونة للإشارة إلى نشاط استثناء."
+
+#. module: task_one
+#: model:ir.model.fields,help:task_one.field_task__message_needaction
+msgid "If checked, new messages require your attention."
+msgstr "إذا تم تحديد هذا المربع، فإن الرسائل الجديدة تتطلب انتباهك."
+
+#. module: task_one
+#: model:ir.model.fields,help:task_one.field_task__message_has_error
+msgid "If checked, some messages have a delivery error."
+msgstr "إذا تم تحديد هذا المربع، فقد يكون لبعض الرسائل خطأ في التسليم."
+
+#. module: task_one
+#: model:ir.model.fields.selection,name:task_one.selection__task__status__in_progress
+#: model:ir.model.fields.selection,name:task_one.selection__wizard__status__in_progress
+msgid "In Progress"
+msgstr "في تَقَدم"
+
+#. module: task_one
+#: model_terms:ir.ui.view,arch_db:task_one.task_view_search
+msgid "In Progress Status"
+msgstr "في حالة التقدم"
+
+#. module: task_one
+#: model:ir.model.fields,field_description:task_one.field_task__message_is_follower
+msgid "Is Follower"
+msgstr "هو تابع"
+
+#. module: task_one
+#: model:ir.model.fields,field_description:task_one.field_task__is_late
+msgid "Is Late"
+msgstr "متأخر"
+
+#. module: task_one
+#: model:ir.model.fields,field_description:task_one.field_task____last_update
+#: model:ir.model.fields,field_description:task_one.field_task_timesheet____last_update
+#: model:ir.model.fields,field_description:task_one.field_wizard____last_update
+msgid "Last Modified on"
+msgstr "تاريخ آخر تعديل"
+
+#. module: task_one
+#: model:ir.model.fields,field_description:task_one.field_task__write_uid
+#: model:ir.model.fields,field_description:task_one.field_task_timesheet__write_uid
+#: model:ir.model.fields,field_description:task_one.field_wizard__write_uid
+msgid "Last Updated by"
+msgstr "آخر تحديث بواسطة"
+
+#. module: task_one
+#: model:ir.model.fields,field_description:task_one.field_task__write_date
+#: model:ir.model.fields,field_description:task_one.field_task_timesheet__write_date
+#: model:ir.model.fields,field_description:task_one.field_wizard__write_date
+msgid "Last Updated on"
+msgstr "آخر تحديث بتاريخ"
+
+#. module: task_one
+#: model:ir.model.fields,field_description:task_one.field_task__message_main_attachment_id
+msgid "Main Attachment"
+msgstr "المرفق الرئيسي"
+
+#. module: task_one
+#: model:ir.ui.menu,name:task_one.main_menu_root
+msgid "Main Menu"
+msgstr "القائمة الرئيسية"
+
+#. module: task_one
+#: model:ir.model.fields,field_description:task_one.field_task__message_has_error
+msgid "Message Delivery error"
+msgstr "خطأ في تسليم الرسالة"
+
+#. module: task_one
+#: model:ir.model.fields,field_description:task_one.field_task__message_ids
+msgid "Messages"
+msgstr "رسائل "
+
+#. module: task_one
+#: model:ir.model.fields,field_description:task_one.field_task__my_activity_date_deadline
+msgid "My Activity Deadline"
+msgstr "الموعد النهائي لنشاطي"
+
+#. module: task_one
+#: model:ir.model.fields.selection,name:task_one.selection__task__status__new
+#: model:ir.model.fields.selection,name:task_one.selection__wizard__status__new
+msgid "New"
+msgstr "جديد"
+
+#. module: task_one
+#: model_terms:ir.ui.view,arch_db:task_one.task_view_search
+msgid "New Status"
+msgstr "الوضع الجديد"
+
+#. module: task_one
+#: model:ir.model.fields,field_description:task_one.field_task__activity_calendar_event_id
+msgid "Next Activity Calendar Event"
+msgstr "حدث تقويم النشاط التالي"
+
+#. module: task_one
+#: model:ir.model.fields,field_description:task_one.field_task__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr "الموعد النهائي للنشاط التالي"
+
+#. module: task_one
+#: model:ir.model.fields,field_description:task_one.field_task__activity_summary
+msgid "Next Activity Summary"
+msgstr "ملخص النشاط التالي"
+
+#. module: task_one
+#: model:ir.model.fields,field_description:task_one.field_task__activity_type_id
+msgid "Next Activity Type"
+msgstr "نوع النشاط التالي"
+
+#. module: task_one
+#: model:ir.model.fields,field_description:task_one.field_task__message_needaction_counter
+msgid "Number of Actions"
+msgstr "عدد الإجراءات"
+
+#. module: task_one
+#: model:ir.model.fields,field_description:task_one.field_task__message_has_error_counter
+msgid "Number of errors"
+msgstr "عدد الأخطاء"
+
+#. module: task_one
+#: model:ir.model.fields,help:task_one.field_task__message_needaction_counter
+msgid "Number of messages requiring action"
+msgstr "عدد الرسائل التي تتطلب اتخاذ إجراء"
+
+#. module: task_one
+#: model:ir.model.fields,help:task_one.field_task__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr "عدد الرسائل التي بها خطأ في التسليم"
+
+#. module: task_one
+#: model:ir.actions.report,name:task_one.task_report
+msgid "Report"
+msgstr "تقرير"
+
+#. module: task_one
+#: model:ir.model.fields,field_description:task_one.field_task__activity_user_id
+msgid "Responsible User"
+msgstr "المستخدم المسؤول"
+
+#. module: task_one
+#: model:ir.model.fields,field_description:task_one.field_task__sequence
+msgid "Sequence"
+msgstr "تسلسل "
+
+#. module: task_one
+#: model:ir.model.fields,field_description:task_one.field_task__status
+#: model:ir.model.fields,field_description:task_one.field_wizard__status
+#: model_terms:ir.ui.view,arch_db:task_one.task_view_search
+msgid "Status"
+msgstr "حالة"
+
+#. module: task_one
+#: model:ir.model.fields,help:task_one.field_task__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr ""
+"الحالة بناءً على الأنشطة\n"
+"متأخر: تاريخ الاستحقاق قد انقضى بالفعل\n"
+"اليوم: تاريخ النشاط هو اليوم\n"
+"المخطط له: الأنشطة المستقبلية."
+
+#. module: task_one
+#: model:ir.model.fields,field_description:task_one.field_task_timesheet__task_id
+#: model:ir.model.fields,field_description:task_one.field_wizard__task_id
+msgid "Task"
+msgstr "مهمة"
+
+#. module: task_one
+#: model:ir.model.fields,field_description:task_one.field_task__task_name
+msgid "Task Name"
+msgstr "اسم المهمة"
+
+#. module: task_one
+#: model_terms:ir.ui.view,arch_db:task_one.task_report_template
+msgid "Task:"
+msgstr "مهمة:"
+
+#. module: task_one
+#: model_terms:ir.ui.view,arch_db:task_one.task_report_template
+msgid "Time"
+msgstr "الوقت"
+
+#. module: task_one
+#: model:ir.model.fields,field_description:task_one.field_task_timesheet__time_spent
+msgid "Time Spent (hours)"
+msgstr "الوقت المستغرق (ساعات)"
+
+#. module: task_one
+#: model:ir.model.fields,field_description:task_one.field_task__timesheet_ids
+#: model_terms:ir.ui.view,arch_db:task_one.task_view_form
+msgid "Timesheets"
+msgstr "الجداول الزمنية"
+
+#. module: task_one
+#: model:ir.ui.menu,name:task_one.to_do_menu
+msgid "To_Do"
+msgstr ""
+
+#. module: task_one
+#: model:ir.model.fields,field_description:task_one.field_task__total_time
+msgid "Total Recorded Time (hours)"
+msgstr "إجمالي الوقت المسجل (ساعات)"
+
+#. module: task_one
+#: model_terms:ir.ui.view,arch_db:task_one.task_report_template
+msgid "Total Time"
+msgstr "إجمالي الوقت"
+
+#. module: task_one
+#: model:ir.model.fields,help:task_one.field_task__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr "نوع النشاط الاستثنائي المسجل."
+
+#. module: task_one
+#: model:ir.actions.act_window,name:task_one.change_wizard_window_action
+#: model:ir.actions.server,name:task_one.change_state_server_action
+msgid "Wizard"
+msgstr "معالج"
+
+#. module: task_one
+#: model_terms:ir.ui.view,arch_db:task_one.task_report_template
+msgid "info@task.com | Phone: +123 456 7890 | Register Number: 20108942"
+msgstr ""
+
+#. module: task_one
+#: model:ir.model,name:task_one.model_task
+msgid "task"
+msgstr "مهمة"
+
+#. module: task_one
+#: model:ir.model,name:task_one.model_task_timesheet
+msgid "task.timesheet"
+msgstr ""
+
+#. module: task_one
+#: model:ir.actions.act_window,name:task_one.task_action
+msgid "task_action"
+msgstr ""
+
+#. module: task_one
+#: model:ir.model,name:task_one.model_wizard
+msgid "wizard"
+msgstr "معالج"

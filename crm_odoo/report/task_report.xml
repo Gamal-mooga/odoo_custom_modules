@@ -1,0 +1,93 @@
+<odoo>
+    <record id="task_report" model="ir.actions.report">
+        <field name="name">Report</field>
+        <field name="model">task</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_type">qweb-html</field>
+        <field name="binding_model_id" ref="model_task"/>
+        <field name="binding_type">report</field>
+        <field name="report_name">task_one.task_report_template</field>
+    </record>
+
+    <template id="task_report_template">
+        <t t-call="web.html_container">
+            <t t-call="web.external_layout">
+                <t t-foreach="docs" t-as="o">
+                    <div class="page">
+                     <div class="border-container">
+                    <style>
+                        .border-container {
+                        border: 3px solid black; /* Thick black border */
+                        padding: 20px; /* Space between border and content */
+                        margin: 10px; /* Space around the border */
+                        height: 100%; /* Ensure the content fills the page */
+                        box-sizing: border-box; /* Includes padding in the width/height calculation */
+                        }
+
+                        .page {
+                        font-family: Arial, sans-serif; /* Use a clean font */
+                        }
+
+                        table {
+                        width: 100%;
+                        border-collapse: collapse;
+                        }
+
+                        table th, table td {
+                        border: 1px solid black;
+                        padding: 5px;
+                        text-align: left;
+                        }
+                        h3 {
+                        text-align: center;
+                        margin-bottom: 20px;
+                        }
+                    </style>
+                        <h2>Task: <strong><t t-esc="o.task_name"/></strong></h2>
+                        <h2>Due Date: <strong><t t-esc="o.due_date"/></strong></h2>
+                        <h2>Assign To: <strong><t t-esc="o.assign_to"/></strong></h2>
+                        <h2>Estimated Time: <strong><t t-esc="o.estimated_time"/></strong>H</h2>
+                        <h2>Description:</h2>
+                        <p t-esc="o.description"/>
+                         <br/>
+                         <table style="width: 100%; margin-top: 20px; border-collapse: collapse; border: 1px solid black;">
+                             <thead>
+                                 <tr>
+                                     <th>#</th>
+                                     <th>Date</th>
+                                     <th>Description</th>
+                                     <th>Time</th>
+                                 </tr>
+                             </thead>
+                             <tbody>
+                                 <t t-set="total_time" t-value="0" />
+                                 <t t-foreach="docs.timesheet_ids" t-as="o">
+                                     <tr>
+                                         <td><t t-esc="o_index + 1"/></td>
+                                         <td><t t-esc="o.date"/></td>
+                                         <td><t t-esc="o.description"/></td>
+                                         <td><t t-esc="o.time_spent"/>H</td>
+                                         <t t-set="total_time" t-value="total_time + o.time_spent" />
+                                     </tr>
+                                 </t>
+                             </tbody>
+                         </table>
+                         <table style="width: 100%; margin-top: 10px; border-collapse: collapse; border: 1px solid black;">
+                             <tr>
+                                <td style="text-align: left; font-weight: bold;">Total Time</td>
+                                <td style="text-align: center; font-weight: bold;"><t t-esc="total_time"/> H</td>
+                            </tr>
+                        </table>
+                         <div class="footer">
+                            <hr style="margin-top: 20px; border: 1px solid black;" />
+                             <div style="text-align: center; margin-top: 10px;">
+                                <p>info@task.com | Phone: +123 456 7890 | Register Number: 20108942</p>
+                             </div>
+                        </div>
+                     </div>
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+</odoo>
