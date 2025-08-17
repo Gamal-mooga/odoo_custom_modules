@@ -1,0 +1,147 @@
+<odoo>
+    <template id="portal_attendance_templatess" name="Attendance Info Page">
+        <t t-call="portal.portal_layout">
+
+            <div class="container my-5">
+                <t t-if="portal_alert">
+                    <div t-attf-class="alert alert-#{portal_alert['type']} alert-dismissible fade show mt-3"
+                         role="alert">
+                        <t t-esc="portal_alert['message']"/>
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                </t>
+
+
+                <div class="text-center mb-4">
+                    <h2 class="mb-3">
+                        <i class="fa fa-calendar-check-o me-2"></i>
+                        My Attendance
+                    </h2>
+
+                    <div class="d-flex justify-content-center gap-2">
+                        <form action="/my/attendances/checkin" method="post">
+                            <button class="btn btn-success px-4" type="submit">Check In</button>
+                        </form>
+                        <form action="/my/attendances/checkout" method="post">
+                            <button class="btn btn-danger px-4" type="submit">Check Out</button>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="mt-5">
+                    <h4 class="mb-3">Attendance Records</h4>
+
+                    <t t-if="attendances">
+                        <div class="table-responsive">
+                            <table class="table table-hover table-bordered">
+                                <thead class="bg-primary text-white text-center">
+                                    <tr>
+                                        <th>Check In</th>
+                                        <th>Check Out</th>
+                                        <th>Worked Hours</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <t t-foreach="attendances" t-as="att">
+                                        <tr>
+                                            <td>
+                                                <a t-att-href="'/my/attendances/%s' % att.id">
+                                                    <t t-esc="att.check_in.strftime('%Y-%m-%d %H:%M')"/>
+                                                </a>
+                                            </td>
+
+                                            <td>
+                                                <t t-if="att.check_out">
+                                                    <t t-esc="att.check_out.strftime('%Y-%m-%d %H:%M')"/>
+                                                </t>
+                                                <t t-if="not att.check_out">
+                                                    <span class="text-warning">Not Checked Out</span>
+                                                </t>
+                                            </td>
+
+                                            <td>
+                                                <t t-if="att.worked_hours">
+                                                    <t t-set="hours" t-value="int(att.worked_hours)"/>
+                                                    <t t-set="minutes" t-value="int((att.worked_hours - hours) * 60)"/>
+                                                    <span>
+                                                        <t t-esc="str(hours) + 'h ' + str(minutes) + 'm'"/>
+                                                    </span>
+                                                </t>
+                                                <t t-if="not att.worked_hours">
+                                                    <span class="text-muted">-</span>
+                                                </t>
+                                            </td>
+                                        </tr>
+                                    </t>
+                                </tbody>
+                            </table>
+                        </div>
+                    </t>
+
+                    <t t-if="not attendances">
+                        <div class="alert alert-info text-center mt-4">
+                            No attendance records found.
+                        </div>
+                    </t>
+
+                </div>
+
+            </div>
+        </t>
+    </template>
+    <template id="portal_attendance_detail" name="Attendance Detail">
+        <t t-call="portal.portal_layout">
+            <div class="container my-5">
+                <h2 class="mb-4">
+                    <i class="fa fa-info-circle me-2"></i>
+                    Attendance Details
+                </h2>
+
+                <table class="table table-bordered">
+                    <tr>
+                        <th>Check In</th>
+                        <td>
+                            <t t-if="attendance.check_in">
+                                <t t-esc="attendance.check_in.strftime('%Y-%m-%d %H:%M')"/>
+                            </t>
+                            <t t-if="not attendance.check_in">
+                                <span class="text-muted">-</span>
+                            </t>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Check Out</th>
+                        <td>
+                            <t t-if="attendance.check_out">
+                                <t t-esc="attendance.check_out.strftime('%Y-%m-%d %H:%M')"/>
+                            </t>
+                            <t t-if="not attendance.check_out">
+                                <span class="text-warning">Not Checked Out</span>
+                            </t>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Worked Hours</th>
+                        <td>
+                            <t t-if="attendance.worked_hours">
+                                <t t-set="hours" t-value="int(attendance.worked_hours)"/>
+                                <t t-set="minutes" t-value="int((attendance.worked_hours - hours) * 60)"/>
+                                <span>
+                                    <t t-esc="str(hours) + 'h ' + str(minutes) + 'm'"/>
+                                </span>
+                            </t>
+                            <t t-if="not attendance.worked_hours">
+                                <span class="text-muted">-</span>
+                            </t>
+                        </td>
+                    </tr>
+                </table>
+
+                <a href="/my/attendances" class="btn btn-secondary mt-4">
+                    <i class="fa fa-arrow-left me-1"></i>
+                    Back to Attendance List
+                </a>
+            </div>
+        </t>
+    </template>
+</odoo>

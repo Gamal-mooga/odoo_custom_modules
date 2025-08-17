@@ -1,0 +1,28 @@
+<odoo>
+    <!-- إضافة بطاقة في صفحة البورتال -->
+    <template id="portal_employee_card" inherit_id="portal.portal_my_home">
+        <xpath expr="//div[@id='portal_common_category']" position="inside">
+            <t t-if="request.env.user.has_group('custom_portal_pages.group_portal_hr')">
+                <t t-call="portal.portal_docs_entry">
+                    <t t-set="title">Employee Info</t>
+                    <t t-set="text">View and manage employee data</t>
+                    <t t-set="url" t-value="'/my/employees'"/>
+                    <t t-set="config_card" t-value="True"/>
+                </t>
+            </t>
+        </xpath>
+    </template>
+    <template id="portal_sales_card" inherit_id="portal.portal_my_home">
+        <xpath expr="//div[@id='portal_common_category']" position="inside">
+            <t t-if="request.env.user.has_group('custom_portal_pages.group_portal_sales')">
+                <t t-call="portal.portal_docs_entry">
+                    <t t-set="title">Sales Info</t>
+                    <t t-set="text">View and manage Sales data</t>
+                    <t t-set="url" t-value="'/my/sales'"/>
+                    <t t-set="config_card" t-value="True"/>
+                </t>
+            </t>
+        </xpath>
+    </template>
+
+</odoo>

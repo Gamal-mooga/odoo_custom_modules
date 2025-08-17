@@ -1,0 +1,138 @@
+<odoo>
+    <!-- الصفحة الرئيسية للموظف -->
+    <template id="portal_employee_home" name="Employee Portal Home">
+        <t t-call="portal.portal_layout">
+            <div class="container mt-4">
+                <h2>مرحباً <t t-esc="employee.name"/> 👋</h2>
+                <div class="row mt-3">
+                    <div class="col-md-4 mb-3">
+                        <a href="/my/attendances" class="btn btn-success w-100">تسجيل الحضور والانصراف</a>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <a href="/my/leaves/request" class="btn btn-primary w-100">طلب إجازة</a>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <a href="/my/permission/request" class="btn btn-warning w-100">طلب إذن</a>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <a href="/my/leaves/info" class="btn btn-info w-100">عرض الإجازات</a>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <a href="/my/permissions" class="btn btn-secondary w-100">عرض الأذونات</a>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <a href="/my/salary" class="btn btn-dark w-100">عرض المرتب</a>
+                    </div>
+                </div>
+            </div>
+        </t>
+    </template>
+    <template id="portal_salary_template" name="Portal Salary Page">
+        <t t-call="portal.portal_layout">
+            <div class="container mt-4">
+                <h2>💰 تفاصيل المرتب</h2>
+                <p>مرتبك: <strong><t t-esc="salary"/></strong></p>
+            </div>
+        </t>
+    </template>
+     <template id="portal_leave_request_template" name="Portal Leave Request">
+        <t t-call="portal.portal_layout">
+            <div class="container mt-4">
+                <div class="card shadow p-4">
+                    <h2 class="text-primary">📝 طلب إجازة</h2>
+                    <form action="/my/leave/request" method="post">
+                        <label>تاريخ البداية:</label>
+                        <input type="date" name="start_date" class="form-control mb-2"/>
+                        <label>تاريخ النهاية:</label>
+                        <input type="date" name="end_date" class="form-control mb-2"/>
+                        <label>السبب:</label>
+                        <textarea name="reason" class="form-control mb-2"></textarea>
+                        <button type="submit" class="btn btn-primary">إرسال الطلب</button>
+                    </form>
+                </div>
+            </div>
+        </t>
+    </template>
+     <template id="portal_permission_request_template" name="Portal Permission Request">
+        <t t-call="portal.portal_layout">
+            <div class="container mt-4">
+                <div class="card shadow p-4">
+                    <h2 class="text-warning">⏳ طلب إذن</h2>
+                    <form action="/my/permission/request" method="post">
+                        <label>تاريخ الإذن:</label>
+                        <input type="date" name="date" class="form-control mb-2"/>
+                        <label>الوقت من:</label>
+                        <input type="time" name="time_from" class="form-control mb-2"/>
+                        <label>الوقت إلى:</label>
+                        <input type="time" name="time_to" class="form-control mb-2"/>
+                        <label>السبب:</label>
+                        <textarea name="reason" class="form-control mb-2"></textarea>
+                        <button type="submit" class="btn btn-warning">إرسال الطلب</button>
+                    </form>
+                </div>
+            </div>
+        </t>
+    </template>
+
+    <!-- عرض الإجازات -->
+    <template id="portal_leave_list_template" name="Portal Leave List">
+    <t t-call="portal.portal_layout">
+        <div class="container mt-4">
+            <h2 class="text-info">📅 إجازاتي</h2>
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>من</th>
+                        <th>إلى</th>
+                        <th>السبب</th>
+                        <th>الحالة</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <t t-foreach="leaves" t-as="leave">
+                        <tr>
+                            <td><t t-esc="leave.request_date_from"/></td>
+                            <td><t t-esc="leave.request_date_to"/></td>
+                            <td><t t-esc="leave.name"/></td>
+                            <td><t t-esc="leave.state"/></td>
+                        </tr>
+                    </t>
+                </tbody>
+            </table>
+        </div>
+    </t>
+</template>
+
+
+    <!-- عرض الأذونات -->
+    <template id="portal_permission_list_template" name="Portal Permission List">
+        <t t-call="portal.portal_layout">
+            <div class="container mt-4">
+                <h2 class="text-secondary">📋 أذوناتي</h2>
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>التاريخ</th>
+                            <th>من</th>
+                            <th>إلى</th>
+                            <th>السبب</th>
+                            <th>الحالة</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <t t-foreach="permissions" t-as="perm">
+                            <tr>
+                                <td><t t-esc="perm.date"/></td>
+                                <td><t t-esc="perm.time_from"/></td>
+                                <td><t t-esc="perm.time_to"/></td>
+                                <td><t t-esc="perm.reason"/></td>
+                                <td><t t-esc="perm.status"/></td>
+                            </tr>
+                        </t>
+                    </tbody>
+                </table>
+            </div>
+        </t>
+    </template>
+</odoo>
+

@@ -1,0 +1,29 @@
+<odoo>
+    <template id="portal_my_sales_template" name="My Sales">
+        <t t-call="portal.portal_layout">
+            <div class="container my-5">
+                <h2>قائمة عروض الأسعار والفواتير</h2>
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>المرجع</th>
+                            <th>التاريخ</th>
+                            <th>الإجمالي</th>
+                            <th>الحالة</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <t t-foreach="sales_orders" t-as="order">
+                            <tr>
+                                    <td><t t-esc="order.name"/></td>
+                                    <td><t t-esc="order.date_order"/></td>
+                                    <td><t t-esc="order.amount_total"/></td>
+                                    <td><t t-esc="order.state"/></td>
+                            </tr>
+                        </t>
+                    </tbody>
+                </table>
+            </div>
+        </t>
+    </template>
+</odoo>

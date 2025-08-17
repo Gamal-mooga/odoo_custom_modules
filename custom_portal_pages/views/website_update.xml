@@ -1,0 +1,83 @@
+<odoo>
+  <template id="custom_event_list_template" name="Custom Event List">
+    <t t-call="website.layout">
+      <div class="container mt-5">
+        <h1 class="mb-4">Custom Events</h1>
+        <div class="row">
+          <t t-foreach="events" t-as="event">
+            <div class="col-md-4 mb-3">
+              <div class="card h-100">
+                <div class="card-body">
+                  <h5 class="card-title"><t t-esc="event.name"/></h5>
+                  <p class="card-text">Start Date: <t t-esc="event.date_begin"/></p>
+                  <p class="card-text">End Date: <t t-esc="event.date_end"/></p>
+                  <a t-att-href="'/custom/events/%s' % event.id" class="btn btn-primary">View Details</a>
+                </div>
+              </div>
+            </div>
+          </t>
+        </div>
+      </div>
+    </t>
+  </template>
+
+  <template id="custom_event_detail_template" name="Custom Event Detail">
+    <t t-call="website.layout">
+      <div class="container mt-5">
+        <h1><t t-esc="event.name"/></h1>
+        <p><t t-esc="event.date_begin"/> - <t t-esc="event.date_end"/></p>
+
+        <!-- Tabs -->
+        <ul class="nav nav-tabs" id="eventTab" role="tablist">
+          <li class="nav-item" role="presentation">
+            <a class="nav-link active" id="registration-tab" data-bs-toggle="tab" href="#registration" role="tab" aria-controls="registration" aria-selected="true">
+              Event Registration
+            </a>
+          </li>
+          <t t-if="has_booths">
+            <li class="nav-item" role="presentation">
+              <a class="nav-link" id="booth-tab" data-bs-toggle="tab" href="#booth" role="tab" aria-controls="booth" aria-selected="false">
+                Event Booth
+              </a>
+            </li>
+          </t>
+        </ul>
+
+        <!-- Tab Contents -->
+        <div class="tab-content mt-3" id="eventTabContent">
+
+          <!-- Registration Tab -->
+          <div class="tab-pane fade show active" id="registration" role="tabpanel" aria-labelledby="registration-tab">
+            <t t-if="not registrations">
+              <div class="alert alert-info">لا توجد تسجيلات بعد لهذا الحدث.</div>
+            </t>
+            <t t-foreach="registrations" t-as="reg">
+              <div class="border rounded p-3 mb-2">
+                <div><strong>Name:</strong> <t t-esc="reg.name"/></div>
+                <div><strong>Email:</strong> <t t-esc="reg.email or '-'"/></div>
+                <div><strong>Phone:</strong> <t t-esc="reg.phone or '-'"/></div>
+              </div>
+            </t>
+          </div>
+
+          <!-- Booth Tab -->
+          <t t-if="has_booths">
+            <div class="tab-pane fade" id="booth" role="tabpanel" aria-labelledby="booth-tab">
+              <t t-if="not booths">
+                <div class="alert alert-info">لا توجد أجنحة (Booths) لهذا الحدث.</div>
+              </t>
+              <t t-foreach="booths" t-as="bo">
+                <div class="border rounded p-3 mb-2">
+                  <div><strong>Booth:</strong> <t t-esc="bo.name"/></div>
+                  <div><strong>Status:</strong> <t t-esc="bo.state or '-'"/></div>
+                  <div><strong>Category:</strong> <t t-esc="bo.category_id and bo.category_id.name or '-'"/></div>
+                </div>
+              </t>
+            </div>
+          </t>
+
+        </div>
+      </div>
+    </t>
+  </template>
+</odoo>

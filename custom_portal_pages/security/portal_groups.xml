@@ -1,0 +1,26 @@
+<odoo>
+    <data noupdate="1">
+
+        <!-- جروب المهندسين -->
+        <record id="group_portal_engineer" model="res.groups">
+            <field name="name">Portal Engineers</field>
+            <field name="category_id" ref="base.module_category_portal"/>
+            <field name="implied_ids" eval="[(4, ref('base.group_portal'))]"/>
+        </record>
+
+        <!-- جروب المبيعات -->
+        <record id="group_portal_sales" model="res.groups">
+            <field name="name">Sales Portal </field>
+            <field name="category_id" ref="base.module_category_portal"/>
+            <field name="implied_ids" eval="[(4, ref('base.group_portal'))]"/>
+        </record>
+
+        <!-- جروب الموارد البشرية -->
+        <record id="group_portal_hr" model="res.groups">
+            <field name="name">Portal HR</field>
+            <field name="category_id" ref="base.module_category_portal"/>
+            <field name="implied_ids" eval="[(4, ref('base.group_portal'))]"/>
+        </record>
+
+    </data>
+</odoo>
